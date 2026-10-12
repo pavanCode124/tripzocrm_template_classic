@@ -4,11 +4,21 @@ import { useEffect } from "react";
 
 const STYLE_ID = "qt-page-sizes-classic";
 
-/** CSS px -> mm, rounded up (plus a hair) so a page box is never a
- *  fraction shorter than the content it has to hold — being short by even
- *  half a pixel pushes a blank sheet into the PDF. */
+/** CSS px -> mm, rounded up plus a generous safety buffer so a page box is
+ *  never even fractionally shorter than the content it has to hold.
+ *
+ *  A tiny buffer (previously 0.3mm) isn't enough in practice: Chrome's
+ *  print-rendering pass can lay out text with slightly different line-wrap
+ *  points than the live on-screen DOM it was measured from (different text
+ *  shaping/hinting path, not a bug in this component), which is enough to
+ *  add a whole extra text line's height on a dense page (the cover's
+ *  stacked tables, the policies page's long bullet lists). When that
+ *  happens with too small a buffer, the overflow — typically just the
+ *  trailing footer — spills onto its own near-blank extra page, which is
+ *  far more visible than a few mm of harmless blank space at the bottom of
+ *  a page, so this errs well on the side of "too tall" over "too short". */
 function toMm(px: number) {
-  return (Math.ceil((px / 96) * 25.4 * 10) / 10 + 0.3).toFixed(1);
+  return (Math.ceil((px / 96) * 25.4) + 4).toFixed(1);
 }
 
 /**

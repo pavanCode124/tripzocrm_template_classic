@@ -11,6 +11,10 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+  /* If a page's content ever does overflow its computed @page height
+     despite PrintPageSizer's buffer, this keeps the footer intact as one
+     block on whichever page it lands on, instead of splitting mid-line. */
+  break-inside: avoid;
 }
 
 .contactLabel {
