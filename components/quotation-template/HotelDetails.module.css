@@ -1,0 +1,37 @@
+.hotelName {
+  margin: 0;
+  font-weight: 700;
+  font-size: 11.5px;
+  color: var(--qt-navy);
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  margin-top: 4px;
+  color: var(--qt-gold);
+}
+
+.cityName {
+  margin: 0;
+  font-weight: 600;
+  color: var(--qt-text);
+}
+
+.citySub {
+  margin: 1px 0 0;
+  font-size: 9.5px;
+  color: var(--qt-muted-light);
+}
+
+.date {
+  margin: 0;
+  font-weight: 600;
+  color: var(--qt-text);
+}
+
+.time {
+  margin: 1px 0 0;
+  font-size: 9.5px;
+  color: var(--qt-muted-light);
+}

@@ -1,0 +1,123 @@
+.root {
+  /* ---- Design tokens, scoped to this component tree only ----
+     Sampled directly off the reference PDF's rendered pixels: the navy is
+     rgb(19,32,60), the gold accent/divider/day-badge is rgb(176,140,87),
+     the gold-on-navy header text is ~rgb(226,208,175), and the zebra/paper
+     background used throughout tables and boxes is ~rgb(245,246,250). */
+  --qt-navy: #13203c;
+  --qt-navy-dark: #0b1424;
+  --qt-navy-soft: rgba(19, 32, 60, 0.75);
+  --qt-gold: #b08c57;
+  --qt-gold-light: #e7d3ae;
+  --qt-paper: #f5f6fa;
+  --qt-page-bg: #eef1f5;
+  --qt-border: #e3e6ee;
+  --qt-text: #1f2a3d;
+  --qt-muted: #626b7d;
+  --qt-muted-light: #94a0b4;
+  --qt-good: #16a34a;
+  --qt-bad: #dc2626;
+  /* The reference PDF's own fonts (DejaVu Sans / Liberation Serif) are
+     themselves generic Linux print-fallback substitutes for a plain serif
+     + sans-serif pairing, not a custom brand webfont — so the classic skin
+     uses the same kind of safe, no-download system stacks rather than
+     pulling in a Google Font. */
+  --qt-font-heading: Georgia, Cambria, "Times New Roman", Times, serif;
+  --qt-font-body: Arial, Helvetica, "Segoe UI", Tahoma, sans-serif;
+
+  font-family: var(--qt-font-body);
+  color: var(--qt-text);
+  background: var(--qt-page-bg);
+  line-height: 1.5;
+  padding: 28px 0;
+}
+
+.root,
+.root * {
+  box-sizing: border-box;
+  /* Without this, Chrome/Edge/Firefox silently drop every background
+     colour (table header rows, the gold badges, the thank-you box) when
+     printing, even with "Background graphics" left on. */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+.root img {
+  max-width: 100%;
+  display: block;
+}
+
+.root a {
+  color: #1d4ed8;
+}
+
+.section {
+  background: #fff;
+}
+
+.section + .section {
+  margin-top: 28px;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--qt-border);
+  border: none;
+  margin: 24px 0;
+}
+
+/* Shared key/value + tabular styling used by the cover's details/pricing
+   tables, the hotel table, and each day's activity table. */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--qt-border);
+  font-size: 10.5px;
+}
+
+.table th {
+  background: var(--qt-navy);
+  color: var(--qt-gold-light);
+  font-family: var(--qt-font-body);
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 9px 12px;
+  border: 1px solid var(--qt-navy);
+}
+
+.table td {
+  padding: 9px 12px;
+  border: 1px solid var(--qt-border);
+  vertical-align: top;
+  color: var(--qt-text);
+}
+
+.table tbody tr:nth-child(even) td {
+  background: var(--qt-paper);
+}
+
+.totalRow td {
+  background: var(--qt-navy) !important;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Fallback only. <PrintPageSizer> overrides this at print time with one
+   named @page per page, each carrying that page's own measured height. */
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
+
+@media print {
+  .root {
+    background: #fff;
+    padding: 0;
+  }
+}

@@ -1,0 +1,54 @@
+/* A page is as tall as its own content — never a fixed A4 sheet.
+   Width is always 210mm (the reference PDF is 595pt wide on every page),
+   but the height grows with the content and only falls back to a floor of
+   140mm on very short pages. <PrintPageSizer> reads these rendered heights
+   back and emits a matching per-page `@page { size: 210mm <h>mm }` so the
+   printed PDF carries the same variable page heights. */
+.page {
+  box-sizing: border-box;
+  position: relative;
+  /* Hard 210mm, never max-width:100%. <PrintPageSizer> measures these
+     elements to build the @page rules, so a page that renders even a few
+     pixels narrower than the paper on a small screen would reflow, measure
+     short, and spill a stray page in the PDF. Narrow viewports scroll
+     instead (see .preview-shell in the host app's global stylesheet). */
+  width: 210mm;
+  min-height: 140mm;
+  margin: 0 auto 28px;
+  background: #fff;
+  box-shadow: 0 10px 40px -18px rgba(19, 32, 60, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  /* 12mm / 12mm / 6mm — measured off the reference: first ink sits
+     ~41pt from the top, text starts at 34pt from the left, and the last
+     footer line clears the bottom edge by a similar margin. */
+  padding: 12mm 12mm 6mm;
+}
+
+.content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  /* Deliberately leaves width/min-height alone: the printed box has to be
+     the exact box that was measured on screen, or the @page size and the
+     content stop agreeing and pages split. */
+  .page {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+  }
+
+  .page:last-child {
+    break-after: auto;
+  }
+}

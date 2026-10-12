@@ -1,0 +1,27 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--qt-border);
+}
+
+.bar {
+  flex: none;
+  width: 4px;
+  align-self: stretch;
+  min-height: 20px;
+  background: var(--qt-gold);
+  border-radius: 1px;
+}
+
+.title {
+  font-family: var(--qt-font-heading);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: var(--qt-navy);
+  text-transform: uppercase;
+}

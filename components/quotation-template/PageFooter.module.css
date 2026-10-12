@@ -1,0 +1,38 @@
+/* Metrics taken off the reference PDF: a hairline rule, the "CONTACT US"
+   label just below it, three contact lines, and the page number aligned on
+   the label's line, in the brand navy. */
+.footer {
+  border-top: 1px solid var(--qt-border);
+  padding-top: 8px;
+  /* Minimum breathing room under the content; on a short page the page's
+     140mm floor pushes the footer further down on its own. */
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.contactLabel {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  color: var(--qt-navy);
+  margin: 0 0 2px;
+}
+
+.contactLines {
+  font-size: 7px;
+  line-height: 1.4;
+  color: #4b5568;
+}
+
+.pageNumber {
+  flex: none;
+  font-size: 7px;
+  line-height: 1.4;
+  color: var(--qt-muted);
+  white-space: nowrap;
+  margin: 0;
+}

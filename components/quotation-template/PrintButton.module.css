@@ -1,0 +1,43 @@
+.wrap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--qt-navy);
+  color: #fff;
+  font-family: var(--qt-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 0 10px 25px -8px rgba(19, 32, 60, 0.5);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+  background: var(--qt-navy-dark);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media print {
+  .wrap {
+    display: none;
+  }
+}

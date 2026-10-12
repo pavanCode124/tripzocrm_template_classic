@@ -1,0 +1,122 @@
+.route {
+  margin: 0 0 24px;
+  font-family: var(--qt-font-heading);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--qt-navy);
+}
+
+.routeLocation {
+  font-weight: 700;
+}
+
+.routeDays {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--qt-muted);
+}
+
+.arrow {
+  color: var(--qt-gold);
+  font-style: normal;
+  margin: 0 2px;
+}
+
+.card {
+  border: 1px solid var(--qt-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--qt-navy);
+  padding: 13px 16px;
+}
+
+.dayBadge {
+  flex: none;
+  background: var(--qt-gold);
+  color: #fff;
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  border-radius: 5px;
+  padding: 7px 12px;
+}
+
+.title {
+  flex: 1 1 auto;
+  margin: 0;
+  font-family: var(--qt-font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+}
+
+.date {
+  flex: none;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.bodyTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.bodyTable td {
+  border-top: 1px solid var(--qt-border);
+  padding: 12px 16px;
+  vertical-align: top;
+}
+
+.bodyTable tr:first-child td {
+  border-top: none;
+}
+
+.label {
+  width: 100px;
+  font-weight: 700;
+  color: var(--qt-navy);
+  background: var(--qt-paper);
+  white-space: nowrap;
+}
+
+.activityTitle {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--qt-navy);
+}
+
+.bullets {
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--qt-text);
+}
+
+.bullets li {
+  padding-left: 2px;
+}
+
+.note {
+  margin-top: 12px;
+}
+
+.noteHeading {
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: var(--qt-navy);
+}
+
+.italicNote {
+  margin: 12px 0 0;
+  font-style: italic;
+  color: var(--qt-muted);
+}

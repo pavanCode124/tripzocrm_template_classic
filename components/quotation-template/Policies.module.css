@@ -1,0 +1,65 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.box {
+  border: 1px solid var(--qt-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  break-inside: avoid;
+}
+
+.boxHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--qt-navy);
+}
+
+.boxHead h3 {
+  font-family: var(--qt-font-heading);
+  font-weight: 700;
+  font-size: 13.5px;
+  margin: 0;
+  color: var(--qt-navy);
+}
+
+.good {
+  color: var(--qt-good);
+}
+
+.bad {
+  color: var(--qt-bad);
+}
+
+.info {
+  color: var(--qt-gold);
+}
+
+.list {
+  list-style: disc;
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--qt-text);
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--qt-text);
+}
+
+.paragraphs p {
+  margin: 0;
+}

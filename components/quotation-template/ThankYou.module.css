@@ -1,0 +1,28 @@
+.box {
+  border-top: 3px solid var(--qt-gold);
+  background: var(--qt-paper);
+  border-radius: 0 0 8px 8px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--qt-font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--qt-navy);
+}
+
+.line {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--qt-muted);
+}
+
+.contact {
+  margin: 18px 0 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--qt-navy);
+}

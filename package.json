@@ -1,0 +1,23 @@
+{
+  "name": "offbeat-quotation-template-classic",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Preview harness for the portable Offbeat Compass \"Classic\" quotation template (components/quotation-template). Copy that folder into your existing Next.js CRM to use it there.",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  }
+}
